@@ -761,8 +761,8 @@ class QaPcJira():
 
         for platform in platforms:
             self.current_platform = platform
-            logger.info('Creating the task of "{}"'.format(
-                platform['platform_tag']))
+            logger.info('Creating the task of "{} {}"'.format(
+                platform['platform_name'], platform['platform_tag']))
             try:
                 # Step 1
                 if self._get_story_task_by_tag():
