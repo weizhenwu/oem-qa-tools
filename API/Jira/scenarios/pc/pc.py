@@ -915,7 +915,7 @@ class StellaJira(QaPcJira):
         """ Return {string}: return the title name
         """
         return '{} ({})'.format(
-            self.current_platform['product_name'][0],
+            self.current_platform['product_name'],
             self.current_platform['lp_tag']
         )
 
@@ -923,7 +923,7 @@ class StellaJira(QaPcJira):
         """ Return {string}: return the title name
         """
         return '{} ({}) {} image test'.format(
-            self.current_platform['product_name'][0],
+            self.current_platform['product_name'],
             self.current_platform['lp_tag'],
             milestone
         )
@@ -937,7 +937,7 @@ class StellaJira(QaPcJira):
         """ Generate the PRTS card title
         """
         return '{} ({}) image test'.format(
-            self.current_platform['product_name'][0],
+            self.current_platform['product_name'],
             self.current_platform['lp_tag']
         )
 
@@ -945,7 +945,7 @@ class StellaJira(QaPcJira):
         """ Generate the transfer to cert card title
         """
         return '{} ({}) HW transfer to cert lab'.format(
-            self.current_platform['product_name'][0],
+            self.current_platform['product_name'],
             self.current_platform['lp_tag'],
         )
 
@@ -973,8 +973,8 @@ class SuttonJira(QaPcJira):
         """ Return {string}: return the title name
         """
         return '{} ({} {})'.format(
-            self.current_platform['platform_name'][0],
-            self.current_platform['product_name'][0],
+            self.current_platform['platform_name'],
+            self.current_platform['product_name'],
             self.current_platform['platform_tag']
         )
 
@@ -982,15 +982,15 @@ class SuttonJira(QaPcJira):
         """ Return {string}: return the title name
         """
         return '{} ({} {}) {}'.format(
-            self.current_platform['platform_name'][0],
-            self.current_platform['product_name'][0],
+            self.current_platform['platform_name'],
+            self.current_platform['product_name'],
             self.current_platform['platform_tag'],
             milestone
         )
 
     def _get_story_task_by_tag(self):
         tag = '{} {}'.format(
-            self.current_platform['product_name'][0],
+            self.current_platform['product_name'],
             self.current_platform['platform_tag']
         )
         return self._api_get_story_task_by_tag(tag)
@@ -999,14 +999,14 @@ class SuttonJira(QaPcJira):
         """ Generate the PRTS card title
         """
         return '[Sutton] {} ({}) test'.format(
-            self.current_platform['product_name'][0],
+            self.current_platform['product_name'],
             self._generate_prts_tag()
         )
 
     def _generate_prts_tag(self):
         """ Generate the tag for Refresh task
         """
-        platform = self.current_platform['platform_name'][0].replace(' ', '-')
+        platform = self.current_platform['platform_name'].replace(' ', '-')
         product = self.current_platform['product_name'].replace(' ', '-')
         tag = '{}_{}'.format(platform, product)
         return tag
@@ -1015,8 +1015,8 @@ class SuttonJira(QaPcJira):
         """ Generate the transfer to cert card title
         """
         return '{} ({} {}) HW transfer to cert lab'.format(
-            self.current_platform['platform_name'][0],
-            self.current_platform['product_name'][0],
+            self.current_platform['platform_name'],
+            self.current_platform['product_name'],
             self.current_platform['platform_tag']
         )
 
