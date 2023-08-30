@@ -80,8 +80,8 @@ def main():
                 data=data['data'], new_holder=args.c3_holder)
 
             # Remove DUTs from HIC site
-            print('-' * 5 + 'Removing from HIC' + '-' * 5)
-            delete_duts_from_hic(cids=[d['cid'] for d in data['data']])
+            #print('-' * 5 + 'Removing from HIC' + '-' * 5)
+            #delete_duts_from_hic(cids=[d['cid'] for d in data['data']])
 
         # Create Jira card to TELOPS board
         # No matter the process is qa_process or contractor process
